@@ -1,0 +1,22 @@
+{
+  "name": "api-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lambdax-enteprise-device/api-docs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lambdax-enteprise-device/api-docs/issues"
+  },
+  "homepage": "https://github.com/lambdax-enteprise-device/api-docs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
