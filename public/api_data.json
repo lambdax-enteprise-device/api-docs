@@ -14,7 +14,7 @@
       "examples": [
         {
           "title": "Example Return:",
-          "content": "[\n  {\n    \"id\": 1,\n    \"company_name\": \"Enterprise Devices\",\n    \"active\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\"\n  },\n  {\n    \"id\": 2,\n    \"company_name\": \"Test Company 2\",\n    \"active\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\"\n  },\n  {\n    \"id\": 3,\n    \"company_name\": \"Test Company 3\",\n    \"active\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\"\n  },\n  {\n    \"id\": 4,\n    \"company_name\": \"Micah Test Inc.\",\n    \"active\": true,\n    \"created_at\": \"2020-05-06T21:28:23.846Z\",\n    \"updated_at\": \"2020-05-06T21:28:23.846Z\"\n  },\n  {\n    \"id\": 5,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T19:43:30.446Z\",\n    \"updated_at\": \"2020-05-08T19:43:30.446Z\"\n  },\n  {\n    \"id\": 6,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:32:07.265Z\",\n    \"updated_at\": \"2020-05-08T20:32:07.265Z\"\n  },\n  {\n    \"id\": 7,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:39:05.282Z\",\n    \"updated_at\": \"2020-05-08T20:39:05.282Z\"\n  },\n  {\n    \"id\": 8,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:41:08.273Z\",\n    \"updated_at\": \"2020-05-08T20:41:08.273Z\"\n  },\n  {\n    \"id\": 9,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:41:25.542Z\",\n    \"updated_at\": \"2020-05-08T20:41:25.542Z\"\n  },\n  {\n    \"id\": 10,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:43:08.360Z\",\n    \"updated_at\": \"2020-05-08T20:43:08.360Z\"\n  },\n  {\n    \"id\": 11,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:44:57.003Z\",\n    \"updated_at\": \"2020-05-08T20:44:57.003Z\"\n  },\n  {\n    \"id\": 12,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:45:31.285Z\",\n    \"updated_at\": \"2020-05-08T20:45:31.285Z\"\n  },\n  {\n    \"id\": 13,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T20:46:57.046Z\",\n    \"updated_at\": \"2020-05-08T20:46:57.046Z\"\n  },\n  {\n    \"id\": 14,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T21:46:10.179Z\",\n    \"updated_at\": \"2020-05-08T21:46:10.179Z\"\n  },\n  {\n    \"id\": 15,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T21:46:59.955Z\",\n    \"updated_at\": \"2020-05-08T21:46:59.955Z\"\n  },\n  {\n    \"id\": 16,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T21:48:08.365Z\",\n    \"updated_at\": \"2020-05-08T21:48:08.365Z\"\n  },\n  {\n    \"id\": 17,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T21:49:11.338Z\",\n    \"updated_at\": \"2020-05-08T21:49:11.338Z\"\n  },\n  {\n    \"id\": 18,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T21:50:49.067Z\",\n    \"updated_at\": \"2020-05-08T21:50:49.067Z\"\n  },\n  {\n    \"id\": 19,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-08T22:01:13.180Z\",\n    \"updated_at\": \"2020-05-08T22:01:13.180Z\"\n  },\n  {\n    \"id\": 20,\n    \"company_name\": \"Test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-10T19:05:16.162Z\",\n    \"updated_at\": \"2020-05-10T19:05:16.162Z\"\n  },\n  {\n    \"id\": 21,\n    \"company_name\": \"Test \",\n    \"active\": true,\n    \"created_at\": \"2020-05-11T16:54:06.555Z\",\n    \"updated_at\": \"2020-05-11T16:54:06.555Z\"\n  },\n  {\n    \"id\": 22,\n    \"company_name\": \"Test \",\n    \"active\": true,\n    \"created_at\": \"2020-05-11T16:54:15.375Z\",\n    \"updated_at\": \"2020-05-11T16:54:15.375Z\"\n  },\n  {\n    \"id\": 23,\n    \"company_name\": \"Test \",\n    \"active\": true,\n    \"created_at\": \"2020-05-11T16:55:47.158Z\",\n    \"updated_at\": \"2020-05-11T16:55:47.158Z\"\n  },\n  {\n    \"id\": 24,\n    \"company_name\": \"cam\",\n    \"active\": true,\n    \"created_at\": \"2020-05-11T21:14:26.178Z\",\n    \"updated_at\": \"2020-05-11T21:14:26.178Z\"\n  },\n  {\n    \"id\": 25,\n    \"company_name\": \"Test Company\",\n    \"active\": true,\n    \"created_at\": \"2020-05-13T09:47:53.380Z\",\n    \"updated_at\": \"2020-05-13T09:47:53.380Z\"\n  },\n  {\n    \"id\": 26,\n    \"company_name\": \"Test Company\",\n    \"active\": true,\n    \"created_at\": \"2020-05-13T09:50:17.944Z\",\n    \"updated_at\": \"2020-05-13T09:50:17.944Z\"\n  },\n  {\n    \"id\": 27,\n    \"company_name\": \"Test Company\",\n    \"active\": true,\n    \"created_at\": \"2020-05-13T09:51:04.846Z\",\n    \"updated_at\": \"2020-05-13T09:51:04.846Z\"\n  },\n  {\n    \"id\": 28,\n    \"company_name\": \"test\",\n    \"active\": true,\n    \"created_at\": \"2020-05-13T11:15:31.512Z\",\n    \"updated_at\": \"2020-05-13T11:15:31.512Z\"\n  }\n]",
+          "content": "[\n  {\n    \"id\": 1,\n    \"company_name\": \"Enterprise Devices\",\n    \"active\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\"\n  },\n  {\n    \"id\": 2,\n    \"company_name\": \"Test Company 2\",\n    \"active\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\"\n  },\n  {\n\n\n]",
           "type": "json"
         }
       ]
@@ -167,6 +167,209 @@
   },
   {
     "type": "get",
+    "url": "/api/device_types",
+    "title": "Get Device Types",
+    "name": "Device_Types",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Bearer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Returns",
+            "description": "<p>A List Of Manufacturers</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/devices/deviceTypes-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "post",
+    "url": "/api/device_types",
+    "title": "Post A Device Type",
+    "name": "Device_Types",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Bearer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Device_Type",
+            "description": "<p>The type of device</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Returns",
+            "description": "<p>A Device_type id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/devices/deviceTypes-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/api/device_types/:id",
+    "title": "Get Device Type By Id",
+    "name": "Device_Types",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Bearer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "ID",
+            "description": "<p>Device_type id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Returns",
+            "description": "<p>Device_type that matches id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/devices/deviceTypes-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "delete",
+    "url": "/api/device_types/:id",
+    "title": "Delete A Device Type",
+    "name": "Device_Types",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Bearer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>Device_type Id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Returns",
+            "description": "<p>Success Message</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/devices/deviceTypes-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
     "url": "/api/devices",
     "title": "Get all devices",
     "name": "Devices",
@@ -280,6 +483,88 @@
             "optional": false,
             "field": "Bearer_Token",
             "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "company",
+            "description": "<p>The company name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "company_id",
+            "description": "<p>The company id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "device_type_id",
+            "description": "<p>The device type id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "location_id",
+            "description": "<p>the location id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "manufacturer_id",
+            "description": "<p>then manufacturer id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>Return a device id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/devices/device-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "post",
+    "url": "/api/devices",
+    "title": "",
+    "name": "Devices",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Bearer_Token",
+            "description": "<p>jsonwebtoken</p>"
           }
         ]
       }
