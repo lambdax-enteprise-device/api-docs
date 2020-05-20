@@ -1,5 +1,147 @@
 [
   {
+    "type": "post",
+    "url": "/api/auth/signup",
+    "title": "Signup",
+    "name": "Auth",
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>user email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>user password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "first_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "last_name",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Example Return: ",
+          "content": "{\n  \"message\": \"Company test and User info@mike-harley.tech created successfully\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2LCJ1c2VybmFtZSI6ImluZm9AbWlrZS1oYXJsZXkudGVjaCIsImlhdCI6MTU4OTM2ODUzMiwiZXhwIjoxNTg5OTczMzMyfQ.jPWuzSMUw65IfPg-cvmypJJF-mGBtSQ7k4h-c7B8UJw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example Body:",
+        "content": "{\n  \"email\":\"info@mike-harley.tech\",\n\t\"password\":\"test123\",\n\t\"first_name\":\"Mike\",\n\t\"last_name\":\"Harley\",\n\t\"title\":\"Tester\",\n  \"company_name\":\"test\"\n}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "welcome_message",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "jwt",
+            "description": "<p>json web token</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/auth-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "post",
+    "url": "/api/auth/login",
+    "title": "Login",
+    "name": "Auth",
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Example Return:",
+          "content": "{\n  \"message\": \"Login Success\",\n  \"user\": {\n    \"companyId\": 28,\n    \"id\": 26,\n    \"email\": \"info@mike-harley.tech\",\n    \"firstName\": \"Mike\",\n    \"lastName\": \"Harley\",\n    \"title\": \"Admins\"\n  },\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2LCJ1c2VybmFtZSI6ImluZm9AbWlrZS1oYXJsZXkudGVjaCIsImlhdCI6MTU4OTkyOTcxNywiZXhwIjoxNTkwNTM0NTE3fQ.hdbEfVTLSgJh616OhEs54J7bYaaObhtppQqCdf0Z7MQ\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "welcome_message",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "jwt",
+            "description": "<p>json web token</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/auth-router.js",
+    "groupTitle": "Admin"
+  },
+  {
     "type": "get",
     "url": "/api/companies",
     "title": "Get a list of all companies",
@@ -797,27 +939,25 @@
     "groupTitle": "Admin"
   },
   {
-    "type": "post",
-    "url": "/api/auth/login",
-    "title": "Admin login",
-    "name": "login",
+    "type": "get",
+    "url": "/api/mfgs",
+    "title": "Get A List Of All Manufacturers",
+    "name": "Manufacturers",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
     "group": "Admin",
-    "parameter": {
+    "header": {
       "fields": {
-        "Parameter": [
+        "Header": [
           {
-            "group": "Parameter",
+            "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "email",
-            "description": ""
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "password",
-            "description": ""
+            "field": "Berer_Token",
+            "description": "<p>auth token</p>"
           }
         ]
       }
@@ -829,29 +969,40 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "welcome_message",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "jwt",
-            "description": "<p>json web token</p>"
+            "field": "Returns",
+            "description": "<p>a list of manufacturers</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "routes/auth/auth-router.js",
+    "filename": "routes/manufacturers/mfg-router.js",
     "groupTitle": "Admin"
   },
   {
     "type": "post",
-    "url": "/api/auth/signup",
-    "title": "New admin signup",
-    "name": "signup",
+    "url": "/api/mfgs",
+    "title": "Add A Manufacturer",
+    "name": "Manufacturers",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
     "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Berer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -859,51 +1010,209 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "email",
-            "description": "<p>user email</p>"
-          },
+            "field": "Name",
+            "description": "<p>of manufacturer</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
           {
-            "group": "Parameter",
+            "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "password",
-            "description": "<p>user password</p>"
-          },
+            "field": "Id",
+            "description": "<p>Returns the manufacturers id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/manufacturers/mfg-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/api/mfgs/:id",
+    "title": "Find A Manufacturer By Id",
+    "name": "Manufacturers",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
           {
-            "group": "Parameter",
+            "group": "Header",
             "type": "String",
             "optional": false,
-            "field": "first_name",
-            "description": ""
-          },
+            "field": "Berer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
           {
             "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "Manufacturer",
+            "description": "<p>Id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "last_name",
-            "description": ""
-          },
+            "field": "Returns",
+            "description": "<p>the manufacturer</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/manufacturers/mfg-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "delete",
+    "url": "/api/mfgs",
+    "title": "Delete A Manufacturer",
+    "name": "Manufacturers",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Berer_Token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
           {
             "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>of manufacturer</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "title",
-            "description": ""
+            "field": "Message",
+            "description": "<p>Return a success message</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/manufacturers/mfg-router.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/api/requests",
+    "title": "Get Requests",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Example Return: ",
+          "content": "{\n \n  {\n    \"id\": 1,\n    \"company_id\": 1,\n    \"location_id\": 1,\n    \"employee_id\": \"1337\",\n    \"employee_name\": \"Joel Perez\",\n    \"employee_email\": \"joel.perez@enterprisedevices.com\",\n    \"approver_name\": \"Jack Sparrow\",\n    \"approver_email\": \"jack.sparrow@enterprisedevices.com\",\n    \"request_justification\": \"I just want new stuff!\",\n    \"approved\": false,\n    \"created_at\": \"2020-04-22T17:41:27.826Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.826Z\"\n  }\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/api/requests/company",
+    "title": "Get a request by company name",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "company",
+            "description": "<p>Company Name</p>"
           }
         ]
       },
       "examples": [
         {
-          "title": "Example Return: ",
-          "content": "{\n  \"message\": \"Company test and User info@mike-harley.tech created successfully\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2LCJ1c2VybmFtZSI6ImluZm9AbWlrZS1oYXJsZXkudGVjaCIsImlhdCI6MTU4OTM2ODUzMiwiZXhwIjoxNTg5OTczMzMyfQ.jPWuzSMUw65IfPg-cvmypJJF-mGBtSQ7k4h-c7B8UJw\"\n}",
+          "title": "Return Example:",
+          "content": "[\n  {\n    \"id\": 1,\n    \"company_id\": 1,\n    \"location_id\": 1,\n    \"employee_id\": \"1337\",\n    \"employee_name\": \"Joel Perez\",\n    \"employee_email\": \"joel.perez@enterprisedevices.com\",\n    \"approver_name\": \"Jack Sparrow\",\n    \"approver_email\": \"jack.sparrow@enterprisedevices.com\",\n    \"request_justification\": \"I just want new stuff!\",\n    \"approved\": false,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\",\n    \"company_name\": \"Enterprise Devices\",\n    \"active\": true\n  },\n  {\n    \"id\": 1,\n    \"company_id\": 1,\n    \"location_id\": 1,\n    \"employee_id\": \"1337\",\n    \"employee_name\": \"Mike Harley\",\n    \"employee_email\": \"mike@mike.com\",\n    \"approver_name\": null,\n    \"approver_email\": null,\n    \"request_justification\": \"I just want new stuff!\",\n    \"approved\": true,\n    \"created_at\": \"2020-04-22T17:41:27.808Z\",\n    \"updated_at\": \"2020-04-22T17:41:27.808Z\",\n    \"company_name\": \"Enterprise Devices\",\n    \"active\": true\n  }\n]",
           "type": "json"
         }
       ]
     },
     "examples": [
       {
-        "title": "Example Body:",
-        "content": "{\n  \"email\":\"info@mike-harley.tech\",\n\t\"password\":\"test123\",\n\t\"first_name\":\"Mike\",\n\t\"last_name\":\"Harley\",\n\t\"title\":\"Tester\",\n  \"company_name\":\"test\"\n}",
+        "title": "Body Example:",
+        "content": "{\n  \"company\":\"Enterprise Devices\"\n}",
         "type": "json"
       }
     ],
@@ -912,23 +1221,413 @@
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "object",
             "optional": false,
-            "field": "welcome_message",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "jwt",
-            "description": "<p>json web token</p>"
+            "field": "Requests",
+            "description": "<p>returns a list of requests</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "routes/auth/auth-router.js",
-    "groupTitle": "Admin"
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/api/requests",
+    "title": "Post a request",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "company_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "location_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "employee_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "employee_name:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "employee_email:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "approver_name:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "approver_email:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "request_justification:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "approved:",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Return Example:",
+          "content": "{\n \"id\": 2,\n \"company_id\": 1,\n \"location_id\": 1,\n \"employee_id\": \"1337\",\n \"employee_name\": \"Mike Harley\",\n \"employee_email\": \"mike@mike.com\",\n \"approver_name\": null,\n \"approver_email\": null,\n \"request_justification\": \"I just want new stuff!\",\n \"approved\": true,\n \"created_at\": \"2020-05-20T00:51:21.949Z\",\n \"updated_at\": \"2020-05-20T00:51:21.949Z\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Body Example:",
+        "content": "\n{\n   \"company_id\":1,\n   \"location_id\":1,\n   \"employee_id\":1337,\n   \"employee_name\": \"Mike Harley\",\n   \"employee_email\": \"mike@mike.com\",\n   \"request_justification\": \"I just want new stuff!\",\n   \"approved\": true\n}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Request",
+            "description": "<p>Returns The Request Object</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/api/requests/:id",
+    "title": "Get request by id",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      },
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>request id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "company_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "location_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "employee_id:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "employee_name:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "employee_email:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "approver_name:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "approver_email:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "request_justification:",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "approved:",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Return Example:",
+          "content": "{\n\"id\": 2,\n\"company_id\": 1,\n\"location_id\": 1,\n\"employee_id\": \"1337\",\n\"employee_name\": \"Mike Harley\",\n\"employee_email\": \"mike@mike.com\",\n\"approver_name\": null,\n\"approver_email\": null,\n\"request_justification\": \"I just want new stuff!\",\n\"approved\": true,\n\"created_at\": \"2020-05-20T00:51:21.949Z\",\n\"updated_at\": \"2020-05-20T00:51:21.949Z\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Return Example:",
+          "content": "{\n \"id\": 2,\n \"company_id\": 1,\n \"location_id\": 1,\n \"employee_id\": \"1337\",\n \"employee_name\": \"Mike Harley\",\n \"employee_email\": \"mike@mike.com\",\n \"approver_name\": null,\n \"approver_email\": null,\n \"request_justification\": \"I just want new stuff!\",\n \"approved\": true,\n \"created_at\": \"2020-05-20T00:51:21.949Z\",\n \"updated_at\": \"2020-05-20T00:51:21.949Z\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Id Example:",
+        "content": "{\n  2\n}",
+        "type": "json"
+      },
+      {
+        "title": "Body Example:",
+        "content": "\n{\n   \"company_id\":1,\n   \"location_id\":1,\n   \"employee_id\":1337,\n   \"employee_name\": \"Mike Harley\",\n   \"employee_email\": \"mike@mike.com\",\n   \"request_justification\": \"I just want new stuff!\",\n   \"approved\": true\n}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Request",
+            "description": "<p>Returns The Request Object</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/api/requests/:id",
+    "title": "Update request",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>request id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "Updates",
+            "description": "<p>Changes made</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Return Example:",
+          "content": " {\n\"id\": 2,\n \"company_id\": 1,\n \"location_id\": 1,\n \"employee_id\": \"1337\",\n \"employee_name\": \"Mike Harley\",\n \"employee_email\": \"mike@mike.com\",\n \"approver_name\": null,\n \"approver_email\": null,\n \"request_justification\": \"I just want new stuff!\",\n \"approved\": false,\n \"created_at\": \"2020-05-20T00:51:21.949Z\",\n \"updated_at\": \"2020-05-20T00:51:21.949Z\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Id Example:",
+        "content": "{\n  \"approved\":false\n}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "object",
+            "optional": false,
+            "field": "Request",
+            "description": "<p>Returns updated request object</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/api/requests/:id",
+    "title": "Delete request",
+    "name": "Requests",
+    "permission": [
+      {
+        "name": "Admin"
+      }
+    ],
+    "group": "Admin",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "Id",
+            "description": "<p>request id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/requests/requests-router.js",
+    "groupTitle": "Admin",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Bearer",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    }
   }
 ]
