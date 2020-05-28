@@ -38,6 +38,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "isVerified",
+            "description": "<p>Defaults to false</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "title",
@@ -48,7 +55,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Example Return: ",
-          "content": "{\n  \"message\": \"Company test and User info@mike-harley.tech created successfully\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2LCJ1c2VybmFtZSI6ImluZm9AbWlrZS1oYXJsZXkudGVjaCIsImlhdCI6MTU4OTM2ODUzMiwiZXhwIjoxNTg5OTczMzMyfQ.jPWuzSMUw65IfPg-cvmypJJF-mGBtSQ7k4h-c7B8UJw\"\n}",
+          "content": "{\n  \"message\": \"Company test and User info@mike-harley.tech created successfully.Please check your email\",\n \n}",
           "type": "json"
         }
       ]
@@ -56,7 +63,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example Body:",
-        "content": "{\n  \"email\":\"info@mike-harley.tech\",\n\t\"password\":\"test123\",\n\t\"first_name\":\"Mike\",\n\t\"last_name\":\"Harley\",\n\t\"title\":\"Tester\",\n  \"company_name\":\"test\"\n}",
+        "content": "{\n  \"email\":\"info@mike-harley.tech\",\n\t\"password\":\"test123\",\n\t\"first_name\":\"Mike\",\n  \"last_name\":\"Harley\",\n   \"isVerified\":\"false\"\n\t\"title\":\"Tester\",\n  \"company_name\":\"test\"\n}",
         "type": "json"
       }
     ],
@@ -69,13 +76,6 @@ define({ "api": [
             "optional": false,
             "field": "welcome_message",
             "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "jwt",
-            "description": "<p>json web token</p>"
           }
         ]
       }
@@ -124,8 +124,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "welcome_message",
-            "description": ""
+            "field": "Ok",
+            "description": "<p>&quot;Login Success&quot;</p>"
           },
           {
             "group": "Success 200",
@@ -1780,6 +1780,13 @@ define({ "api": [
             "optional": false,
             "field": "title",
             "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "boolean",
+            "optional": false,
+            "field": "isVerified",
+            "description": ""
           }
         ]
       }
@@ -1921,5 +1928,145 @@ define({ "api": [
         ]
       }
     }
+  },
+  {
+    "type": "get",
+    "url": "/signup/:token",
+    "title": "Email Verification Endpoint",
+    "name": "Auth",
+    "group": "Users",
+    "description": "<p>Url sent via verification email to new user. Url is only valid 24 hours. It takes the from the url and compares it to the token stored in the DB.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "Ok",
+            "description": "<p>Returns a success message and deletes the token from the DB</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "Unauthorized",
+            "description": "<p>&quot;Please Verify Your Email&quot;</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/auth-router.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "get",
+    "url": "/api/auth/password/forgotpassword",
+    "title": "Change User Password",
+    "name": "Auth",
+    "group": "Users",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "form",
+            "optional": false,
+            "field": "Password_Reset",
+            "description": "<p>form</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/resetPassword/reset-password.router.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "post",
+    "url": "/api/auth/password/passwordreset",
+    "title": "Request To Reset User Password",
+    "name": "Auth",
+    "group": "Users",
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "object",
+            "optional": false,
+            "field": "Error_Object",
+            "description": "<p>If not found an error message is returned .</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "Success_Message",
+            "description": "<p>&quot;Email Sent&quot;</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/resetPassword/reset-password.router.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "get",
+    "url": "/api/auth/password/resetpassword/:id/:token",
+    "title": "Reset Password Form",
+    "name": "Auth",
+    "group": "Users",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "form",
+            "optional": false,
+            "field": "New_Password_Form",
+            "description": "<p>Form for the user to update their password.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/resetPassword/reset-password.router.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "post",
+    "url": "/api/auth/password/resetpassword",
+    "title": "Send New User Password",
+    "name": "Auth",
+    "group": "Users",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "json",
+            "optional": false,
+            "field": "Updated_User_Object",
+            "description": "<p>Send the user object back with the updated hashed password/</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/auth/resetPassword/reset-password.router.js",
+    "groupTitle": "Users"
   }
 ] });
